@@ -17,6 +17,12 @@ module.exports = {
         const data = await Product.find()
         res.send(data)
     },
+    allUser: async function  (req,res) {
+        console.log('showing Users')
+        const data = await User.find()
+        console.log('users are',data)
+    },
+
      
     getCart:function(req,res){
         let uid = req.body._id
