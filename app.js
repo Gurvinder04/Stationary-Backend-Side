@@ -21,11 +21,11 @@ admin.use(express.json())
 admin.use(cors())
 admin.use(cookieParser())
 //admin.use('/uploads',express.static('./uploads'))
-admin.use(express.static("uploads"))
+admin.use('http://localhost:3000/uploads',express.static(path.join(__dirname, 'public')))
 
 
 const Storage = multer.diskStorage({
-    destination:(req,file,cb)=>cb(null, './uploads/'),
+    destination:(req,file,cb)=>cb(null, './Uploads/'),
     filename:(req,file,cb)=>cb(null, file.originalname + "_" + Date.now() +path.extname(file.originalname))
 })
 const upload = multer({
