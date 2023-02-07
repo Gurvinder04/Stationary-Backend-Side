@@ -1,8 +1,8 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGO_URI,(err)=>console.log('connected....'))
-//mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
+//mongoose.connect(process.env.MONGO_URI,(err)=>console.log('connected....'))
+mongoose.connect('mongodb://localhost:27017/CustomerData',(err)=>console.log('connected....'))
 
 const ProductSchema =  mongoose.Schema({
     productname:String,
