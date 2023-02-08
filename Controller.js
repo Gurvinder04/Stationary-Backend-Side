@@ -5,7 +5,7 @@ const {Product} = require('./Models')
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-var cookie = require('cookie');
+const cookie = require('cookie');
 var cookieParser = require('cookie-parser')
 const authorize = require('./Middleware/authorize')
 const fs = require('fs')
@@ -133,9 +133,10 @@ module.exports = {
                     let tokens = jwt.sign({ _id: user._id }, process.env.SECRET_KEY)
                     res.cookie("firstjwt", tokens, {
                         expires: new Date(Date.now() + 50000),
-                        // domain: "localhost",
-                        // path: "/",
-                        httpOnly: true
+                         domain: 'https://stationero.netlify.app',
+                         //path: "/",
+                        httpOnly: true,
+                        sameSite:'none' 
                     });
                     //console.log('user cookie is', res.cookie.firstjwt)
                     const user1={
