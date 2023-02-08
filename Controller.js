@@ -137,7 +137,7 @@ module.exports = {
                         // path: "/",
                         httpOnly: true
                     });
-                    //console.log('user logintoken is', tokens)
+                    //console.log('user cookie is', res.cookie.firstjwt)
                     const user1={
                         email:user.email,
                         _id:user._id,
