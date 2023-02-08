@@ -22,7 +22,7 @@ admin.use(cors())
 admin.use(cookieParser())
 //admin.use('/uploads',express.static('./uploads'))
 //admin.use('https://stationary-backend-side.onrender.com/Uploads',express.static(path.join(__dirname, 'public')))
-admin.use('https://localhost:3000/Uploads',express.static(path.join(__dirname, 'public')))
+admin.use('Uploads',express.static(path.join(__dirname, 'public')))
 
 const Storage = multer.diskStorage({
     destination:(req,file,cb)=>cb(null, './public/Uploads/'),
