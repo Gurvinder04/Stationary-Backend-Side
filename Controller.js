@@ -131,13 +131,13 @@ module.exports = {
                 if (user) {
                     //console.log('user is', user)
                     let tokens = jwt.sign({ _id: user._id }, process.env.SECRET_KEY)
-                    res.cookie("firstjwt", tokens, {
-                        expires: new Date(Date.now() + 50000),
-                         domain: 'https://stationary-backend-side.onrender.com',
-                         //path: "/",
-                        httpOnly: true,
-                        sameSite:'none' 
-                    });
+                    // res.cookie("firstjwt", tokens, {
+                    //     expires: new Date(Date.now() + 50000),
+                    //      domain: 'https://stationary-backend-side.onrender.com',
+                    //      //path: "/",
+                    //     httpOnly: true,
+                    //     sameSite:'none' 
+                    // });
                     //console.log('user cookie is', res.cookie.firstjwt)
                     const user1={
                         email:user.email,
