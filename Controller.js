@@ -133,7 +133,7 @@ module.exports = {
                     let tokens = jwt.sign({ _id: user._id }, process.env.SECRET_KEY)
                     res.cookie("firstjwt", tokens, {
                         expires: new Date(Date.now() + 50000),
-                         domain: 'https://stationero.netlify.app',
+                         domain: 'https://stationary-backend-side.onrender.com',
                          //path: "/",
                         httpOnly: true,
                         sameSite:'none' 
